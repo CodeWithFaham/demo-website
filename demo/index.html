@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="only light">
+<title>Promego Medicare – Revolutionizing Healthcare in Pakistan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  color-scheme:light; --bg:#ffffff; --bg-soft:#f1f6fb; --text:#10273a; --muted:#4b6173;
+  --teal:#0d7f86; --navy:#12304d; --footer:#0e2a3a; --card:#ffffff;
+  --border:#e2ebf2; --shadow:0 6px 20px rgba(16,39,58,.10);
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+body{margin:0;font-family:'Roboto',system-ui,-apple-system,Segoe UI,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.55}
+a{color:inherit;text-decoration:none}
+a:focus-visible,button:focus-visible{outline:3px solid var(--teal);outline-offset:3px}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+
+/* Header */
+.site-header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--bg);border-bottom:1px solid var(--border)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:72px;gap:16px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:900;font-size:20px;color:var(--teal);letter-spacing:.5px}
+.logo svg{width:40px;height:40px}
+.logo small{display:block;font-size:10px;font-weight:500;color:var(--muted);letter-spacing:0}
+.nav ul{display:flex;gap:30px;list-style:none;margin:0;padding:0}
+.nav ul a{font-size:15px;font-weight:500;color:var(--muted);padding:6px 0;border-bottom:2px solid transparent}
+.nav ul a:hover,.nav ul a.active{color:var(--text);border-color:var(--teal)}
+.social{display:flex;gap:8px;align-items:center;font-size:15px}
+.topbar{background:#fff;border-bottom:1px solid var(--border);font-size:12px;color:var(--muted)}
+.topbar .container{display:flex;justify-content:space-between;align-items:center;height:34px}
+.tb-social a{margin-left:14px;font-weight:700;color:var(--muted)}
+.tb-social a:hover{color:var(--teal)}
+.menu-btn{display:none;background:none;border:1px solid var(--border);border-radius:8px;width:40px;height:40px;color:var(--text);font-size:20px;cursor:pointer}
+
+/* Hero */
+.hero{position:relative;min-height:560px;display:flex;align-items:center;overflow:hidden;
+  background:linear-gradient(100deg,#ffffff 0%,#f6fafd 50%,#e3eef7 100%)}
+
+.hero-art{position:absolute;right:0;top:0;width:62%;height:100%;object-fit:cover;object-position:right center;
+  -webkit-mask-image:linear-gradient(to right,transparent 0%,#000 35%);
+  mask-image:linear-gradient(to right,transparent 0%,#000 35%)}
+
+.hero-inner{position:relative;z-index:2;width:100%;max-width:1300px;margin:0 auto;padding:64px 5vw}
+
+.hero h1{font-size:clamp(30px,3.6vw,52px);line-height:1.1;font-weight:900;letter-spacing:.5px;
+  margin:0 0 18px;max-width:min(560px,40vw);color:var(--navy)}
+
+.hero p{font-size:19px;max-width:min(440px,36vw);margin:0 0 30px;color:var(--text)}
+
+.btn{display:inline-block;background:var(--navy);color:#fff;font-weight:700;font-size:14px;letter-spacing:1px;padding:15px 30px;border:0;border-radius:4px;cursor:pointer;transition:background .2s}
+.btn:hover{background:var(--teal)}
+
+@media (max-width:768px){
+  .hero-art{width:100%;opacity:.25;-webkit-mask-image:none;mask-image:none}
+  .hero h1,.hero p{max-width:100%}
+}
+
+/* Sections */
+section{padding:72px 0}
+h2.title{text-align:center;font-size:clamp(26px,3.4vw,36px);font-weight:500;margin:0 0 44px}
+.services{background:var(--bg-soft)}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+
+.service{background:var(--card);border-radius:12px;box-shadow:var(--shadow);padding:36px 26px;text-align:center}
+
+.service .icon{width:96px;height:96px;margin:0 auto 20px;border-radius:50%;background:var(--bg-soft);
+  display:grid;place-items:center;border:2px solid var(--border)}
+
+.service .icon svg{width:56px;height:56px;stroke:var(--teal);fill:none;stroke-width:2.2;
+  stroke-linecap:round;stroke-linejoin:round}
+
+.service h3{margin:0 0 8px;font-size:17px;font-weight:700;letter-spacing:.8px}
+.service p{margin:0;color:var(--muted);font-size:15px}
+.scroll-hint{display:grid;place-items:center;margin-top:40px;color:var(--muted)}
+
+
+.brands-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+
+.brand{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  height:130px;padding:18px 24px;display:flex;align-items:center;justify-content:center;
+  box-shadow:0 2px 8px rgba(16,39,58,.06)}
+
+.brand img{width:100%;height:100%;object-fit:contain}
+
+@media (max-width:640px){
+  .brands-grid{gap:12px}
+  .brand{height:90px;padding:12px}
+}
+
+
+/* Footer */
+footer{background:var(--footer);color:#c9dae6;padding:64px 0 24px}
+
+.foot-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1.4fr;gap:44px;
+  padding-bottom:40px;border-bottom:1px solid rgba(255,255,255,.12)}
+
+footer h4{color:#fff;font-size:16px;font-weight:700;margin:0 0 20px;letter-spacing:.5px;
+  position:relative;padding-bottom:12px}
+footer h4::after{content:"";position:absolute;left:0;bottom:0;width:32px;height:2px;background:#4cc4cb}
+
+footer p,footer li{font-size:14px;line-height:1.7;margin:0 0 10px;color:#a9bfcf}
+footer ul{list-style:none;padding:0;margin:0}
+
+footer a{color:#a9bfcf;transition:color .2s,padding-left .2s}
+footer a:hover{color:#fff}
+footer ul li a:hover{padding-left:4px}
+
+.copy{padding-top:22px;text-align:center;font-size:13px;color:#8aa3b5;border:0;margin-top:0}
+
+
+
+/* Mobile: image peeche, text upar */
+@media (max-width:768px){
+  .hero-art{width:100%;opacity:.25;-webkit-mask-image:none;mask-image:none}
+  .hero h1{max-width:100%}
+  .hero p{max-width:100%}
+}
+/* Responsive */
+@media (max-width:900px){
+  .nav ul{display:none;position:absolute;top:72px;left:0;right:0;background:var(--bg);flex-direction:column;gap:0;padding:8px 24px 16px;border-bottom:1px solid var(--border)}
+  .nav ul.open{display:flex}
+  .nav ul li{padding:10px 0}
+  .menu-btn{display:block}
+  .social{display:none}
+  .hero-art{width:100%;opacity:.35}
+  .foot-grid{grid-template-columns:1fr 1fr}
+}
+@media (max-width:640px){
+  .grid-3,.brands-grid{grid-template-columns:1fr}
+  .foot-grid{grid-template-columns:1fr}
+  section{padding:52px 0}
+  .hero{min-height:480px}
+}
+@media (max-width:900px){
+  .foot-grid{grid-template-columns:1fr 1fr;gap:32px}
+}
+@media (max-width:560px){
+  .foot-grid{grid-template-columns:1fr}
+  footer{padding-top:48px}
+}
+@media (max-width:640px){
+  .brands-grid{gap:12px}
+  .brand{height:90px;padding:12px}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn{transition:none}}
+</style>
+</head>
+<body>
+
+<div class="topbar"><div class="container"><span>📞 +92 300 000 0000 &nbsp;&nbsp; ✉ info@promego.com</span><span class="tb-social"><a href="#" aria-label="Facebook">f</a><a href="#" aria-label="LinkedIn">in</a></span></div></div>
+<header class="site-header">
+  <div class="container nav">
+   <a href="#home" class="logo" aria-label="Medichem home">
+  <img src="./assets/img/logo_medichem.png" alt="Medichem" height="90">
+</a>
+      <!-- <span><small>Medicare Enterprises</small></span> -->
+    <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false">☰</button>
+    <ul id="menu">
+      <li><a href="#home" class="active">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#brands">Brands</a></li>
+      <li><a href="#products">Products</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="social"><img src="./assets/img/logo_promed.png" alt="Promego" height="75"></div> </div>
+</header>
+
+<main id="home">
+  <div class="hero">
+<img class="hero-art" src="./assets/img/hero_image.jpg" alt="Doctor with dialysis machine">
+    <div class="container hero-inner">
+      <h1>REVOLUTIONIZING HEALTHCARE IN PAKISTAN SINCE 1998.</h1>
+      <p>Your Trusted Source for Medical Disposables, Dialysis &amp; Surgical Solutions.</p>
+      <a href="#services" class="btn">EXPLORE SOLUTIONS</a>
+    </div>
+  </div>
+
+  <section class="services" id="services">
+    <div class="container">
+      <h2 class="title">Featured Services</h2>
+      <div class="grid-3">
+        <article class="service">
+  <div class="icon">
+    <svg viewBox="0 0 48 48">
+      <rect x="14" y="4" width="20" height="26" rx="8"/>
+      <path d="M24 11c-3 4-4.5 6-4.5 8a4.5 4.5 0 0 0 9 0c0-2-1.5-4-4.5-8z"/>
+      <path d="M24 30v5a5 5 0 0 0 5 5h6"/>
+      <circle cx="38" cy="40" r="2"/>
+    </svg>
+  </div>
+  <h3>DIALYSIS CARE</h3>
+  <p>Full range of dialysis products &amp; consumables.</p>
+</article>
+
+<article class="service">
+  <div class="icon">
+    <svg viewBox="0 0 48 48">
+      <rect x="3" y="30" width="26" height="6" rx="3" transform="rotate(-45 16 33)"/>
+      <path d="M25 25l13-17c3 1 4.5 5 2 8l-11 13z"/>
+    </svg>
+  </div>
+  <h3>SURGICAL &amp; OT</h3>
+  <p>Precision instruments and disposables for operating theatres.</p>
+</article>
+
+<article class="service">
+  <div class="icon">
+    <svg viewBox="0 0 48 48">
+      <rect x="12" y="4" width="24" height="8" rx="2"/>
+      <path d="M14 12v28a3 3 0 0 0 3 3h14a3 3 0 0 0 3-3V12"/>
+      <rect x="18" y="22" width="12" height="12" rx="2"/>
+      <path d="M24 25v6M21 28h6"/>
+    </svg>
+  </div>
+  <h3>PHARMACEUTICALS</h3>
+  <p>Essential medicines for hospital networks.</p>
+</article>
+      </div>
+      <div class="scroll-hint" aria-hidden="true">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+      </div>
+    </div>
+  </section>
+
+  <section id="brands">
+   <div class="container">
+  <h2 class="title">Brand Showcase</h2>
+  <div class="brands-grid">
+    <div class="brand"><img src="./assets/img/01.jpg" alt="Brand 1"></div>
+    <div class="brand"><img src="./assets/img/02.jpg" alt="Brand 2"></div>
+    <div class="brand"><img src="./assets/img/03.jpg" alt="Brand 3"></div>
+    <div class="brand"><img src="./assets/img/04.jpg" alt="Brand 4"></div>
+    <div class="brand"><img src="./assets/img/05.jpg" alt="Brand 5"></div>  
+    <div class="brand"><img src="./assets/img/06.jpg" alt="Brand 6"></div>
+    <div class="brand"><img src="./assets/img/07.jpg" alt="Brand 7"></div>
+    <div class="brand"><img src="./assets/img/08.jpg" alt="Brand 8"></div>
+    <div class="brand"><img src="./assets/img/09.jpg" alt="Brand 9"></div>
+  </div>
+</div>
+  </section>
+</main>
+
+<footer id="contact">
+  <div class="container">
+    <div class="foot-grid">
+      <div id="about">
+        <h4>ABOUT US</h4>
+        <p>Promego Medicare Enterprises has supplied hospitals across Pakistan with dialysis, surgical and pharmaceutical products since 1998.</p>
+      </div>
+      <div>
+        <h4>QUICK LINKS</h4>
+        <ul><li><a href="#home">Home</a></li><li><a href="#products">Products</a></li><li><a href="#about">About</a></li><li><a href="#brands">Brands</a></li><li><a href="#contact">Contact</a></li></ul>
+      </div>
+      <div id="products">
+        <h4>CATEGORIES</h4>
+        <ul><li><a href="#">Dialysis</a></li><li><a href="#">Surgical</a></li><li><a href="#">OT Supplies</a></li><li><a href="#">Pharmaceuticals</a></li></ul>
+      </div>
+      <div>
+        <h4>CONTACT</h4>
+        <ul>
+          <li>Karachi, Pakistan</li>
+          <li><a href="tel:+920000000000">+92 300 000 0000</a></li>
+          <li><a href="mailto:info@promego.com">info@promego.com</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="copy">© 2026 Promego Medicare Enterprises. All rights reserved.</div>
+  </div>
+</footer>
+
+<script>
+  var btn=document.getElementById('menuBtn'),menu=document.getElementById('menu');
+  btn.addEventListener('click',function(){
+    var open=menu.classList.toggle('open');
+    btn.setAttribute('aria-expanded',open);
+  });
+</script>
+</body>
+</html>
